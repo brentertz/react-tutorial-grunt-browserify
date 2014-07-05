@@ -41,6 +41,19 @@ module.exports = function(grunt) {
     }
   });
 
+  grunt.config('less', {
+    styles: {
+      src: './client/src/styles.less',
+      dest: './client/build/assets/styles.css',
+      options: {
+        dumpLineNumbers: debug ? 'all' : false,
+        sourceMap: debug,
+        outputSourceFiles: debug,
+        cleancss: !debug
+      }
+    }
+  });
+
   grunt.config('concurrent', {
     options: {
       logConcurrentOutput: true
@@ -75,6 +88,10 @@ module.exports = function(grunt) {
       files: ['./client/src/index.html'],
       tasks: ['copy:html']
     },
+    less: {
+      files: ['./client/src/**/*.less'],
+      tasks: ['less']
+    },
     jshint: {
       files: ['./Gruntfile.js', './client/src/**/*.js'],
       tasks: ['jshint']
@@ -82,7 +99,7 @@ module.exports = function(grunt) {
   });
 
   grunt.registerTask('develop', ['build', 'concurrent:develop']);
-  grunt.registerTask('build', ['clean', 'jshint', 'browserify:app', 'uglify', 'copy']);
+  grunt.registerTask('build', ['clean', 'jshint', 'browserify:app', 'uglify', 'copy', 'less']);
 
   grunt.registerTask('default', ['build']);
 };
