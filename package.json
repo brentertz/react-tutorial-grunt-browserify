@@ -1,0 +1,48 @@
+{
+  "name": "react-tutorial-grunt-browserify",
+  "version": "0.0.0",
+  "description": "The React tutorial, refactored to use Grunt and Browserify",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/brentertz/react-tutorial-grunt-browserify.git"
+  },
+  "bugs": {
+    "url": "https://github.com/brentertz/react-tutorial-grunt-browserify/issues"
+  },
+  "homepage": "https://github.com/brentertz/react-tutorial-grunt-browserify",
+  "author": "Brent Ertz <brent.ertz@gmail.com> (http://brentertz.com/)",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "start": "NODE_CONFIG_DIR=./server/config node ./server/app.js"
+  },
+  "dependencies": {
+    "express": "~4.5.0",
+    "body-parser": "~1.4.3",
+    "morgan": "~1.1.1",
+    "config": "~0.4.36"
+  },
+  "devDependencies": {
+    "grunt": "~0.4.4",
+    "grunt-cli": "~0.1.13",
+    "load-grunt-tasks": "~0.4.0",
+    "grunt-browserify": "~2.0.8",
+    "grunt-contrib-copy": "~0.5.0",
+    "grunt-contrib-clean": "~0.5.0",
+    "grunt-contrib-uglify": "~0.4.0",
+    "grunt-contrib-watch": "~0.6.1",
+    "grunt-concurrent": "~0.5.0",
+    "grunt-nodemon": "~0.2.1",
+    "grunt-jsxhint": "0.0.2",
+    "reactify": "~0.13.1",
+    "envify": "~1.2.1",
+    "jquery": "~2.1.1",
+    "react": "~0.10.0",
+    "showdown": "https://github.com/petehunt/showdown/archive/e214a2b9cfc5ebf4c9665a9b186f7f08f46b8e73.tar.gz"
+  },
+  "browserify": {
+    "transform": [
+      "reactify"
+    ]
+  }
+}
