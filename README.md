@@ -18,7 +18,7 @@ grunt build
 or for minified assets
 
 ```
-grunt build --production
+grunt build --env production
 ```
 
 ## Server
