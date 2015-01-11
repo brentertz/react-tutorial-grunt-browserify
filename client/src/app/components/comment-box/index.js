@@ -44,7 +44,7 @@ var CommentBox = React.createClass({
     });
   },
 
-  componentWillMount: function() {
+  componentDidMount: function() {
     this.loadCommentsFromServer();
     setInterval(this.loadCommentsFromServer, this.props.pollInterval);
   },

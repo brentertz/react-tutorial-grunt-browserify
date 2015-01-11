@@ -5,9 +5,9 @@ var Comment = require('./comment');
 
 var CommentList = React.createClass({
   render: function() {
-    var commentNodes = this.props.data.map(function(comment) {
+    var commentNodes = this.props.data.map(function(comment, index) {
       return (
-        <Comment author={ comment.author }>{ comment.text }</Comment>
+        <Comment author={ comment.author } key={ index }>{ comment.text }</Comment>
       );
     });
 
